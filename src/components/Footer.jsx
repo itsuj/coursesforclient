@@ -7,7 +7,10 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <h2>About Us</h2>
-          <p>We provide high-quality technical courses to help you grow in your career.</p>
+          <p>Gain practical skills that you can apply immediately in your job.
+Learn at your own pace with flexible and accessible course materials.
+Join a community of learners and professionals to enhance your network.
+Get certified and boost your career opportunities with our expert-led training.</p>
         </div>
         
         <div className="footer-section">
