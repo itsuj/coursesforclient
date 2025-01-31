@@ -31,7 +31,7 @@ function Navbar() {
         <li><a href="/">Home</a></li>
         <li><a href="/">Courses</a></li>
         <li><a href="/">About</a></li>
-        <li><Link to="/contact"></Link>Contact Us</li>
+        <li><Link to="/contact">Contact Us</Link></li>
         {isLoggedIn ? (
           <li><button onClick={handleLogout}>Logout</button></li> // If logged in, show Logout button
         ) : (
