@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,11 +31,11 @@ function Navbar() {
         <li><a href="/">Home</a></li>
         <li><a href="/">Courses</a></li>
         <li><a href="/">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><Link to="/contact"></Link>Contact Us</li>
         {isLoggedIn ? (
           <li><button onClick={handleLogout}>Logout</button></li> // If logged in, show Logout button
         ) : (
-          <li><a href="http://localhost:3000/login">Login</a></li> // If not logged in, show Login link
+          <li><Link to="/login"></Link>Login</li> // If not logged in, show Login link
         )}
       </ul>
     </nav>
