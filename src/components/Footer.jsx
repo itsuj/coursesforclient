@@ -13,10 +13,10 @@ const Footer = () => {
         <div className="footer-section">
           <h2>Quick Links</h2>
           <ul>
-            <li><a href="http://localhost:3000/">Home</a></li>
-            <li><a href="http://localhost:3000/">Courses</a></li>
-            <li><a href="http://localhost:3000/contac">Contact</a></li>
-            <li><a href="http://localhost:3000/">Privacy Policy</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Courses</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/">Privacy Policy</a></li>
           </ul>
         </div>
 

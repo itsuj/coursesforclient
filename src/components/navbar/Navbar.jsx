@@ -28,10 +28,10 @@ function Navbar() {
 
       {/* Navigation Links */}
       <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-        <li><a href="http://localhost:3000/">Home</a></li>
-        <li><a href="http://localhost:3000/">Courses</a></li>
-        <li><a href="http://localhost:3000/">About</a></li>
-        <li><a href="http://localhost:3000/contact">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Courses</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/contact">Contact</a></li>
         {isLoggedIn ? (
           <li><button onClick={handleLogout}>Logout</button></li> // If logged in, show Logout button
         ) : (
