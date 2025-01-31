@@ -35,7 +35,7 @@ function Navbar() {
         {isLoggedIn ? (
           <li><button onClick={handleLogout}>Logout</button></li> // If logged in, show Logout button
         ) : (
-          <li><Link to="/login"></Link>Login</li> // If not logged in, show Login link
+          <li><Link to="/login">Login</Link></li> // If not logged in, show Login link
         )}
       </ul>
     </nav>
