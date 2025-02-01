@@ -1,48 +1,56 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
-import "./Home.css"; 
-import Footer from "../components/Footer"; 
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
+import Footer from "../components/Footer";
 
 export const Home = () => {
-  // Get API URL from environment variables
-  const apiUrl = process.env.REACT_APP_API_URL;
-  
-  // State to store the list of courses fetched from the backend
+  // State for loading status and fetched courses
+  const [loading, setLoading] = useState(true);
   const [listOfCourses, setListOfCourses] = useState([]);
 
-  // Hook for navigation between pages
-  const navigate = useNavigate(); 
+  // Get API URL from environment variables
+  const apiUrl = process.env.REACT_APP_API_URL;
 
-  // Fetch courses from the backend when the component mounts or when apiUrl changes
+  // Hook for navigation between pages
+  const navigate = useNavigate();
+
+  // Fetch courses when the component mounts
   useEffect(() => {
     if (!apiUrl) {
       console.error("API URL is not defined. Check your .env file.");
-      return; // Prevent making a request if API URL is missing
+      setLoading(false);
+      return;
     }
 
     axios
-      .get(`${apiUrl}coursedb/api/v1/courses/get`) // API call to fetch courses
+      .get(`${apiUrl}coursedb/api/v1/courses/get`)
       .then((response) => {
-        setListOfCourses(response.data || []); // Ensure state is never undefined
+        setListOfCourses(response.data || []);
       })
       .catch((error) => {
         console.error("Error fetching courses:", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-  }, [apiUrl]); // Re-run when apiUrl changes
+  }, [apiUrl]);
+
+  // Show loading message until data is fetched
+  if (loading) {
+    return <div className="loading-message">Loading courses...  Due to server inactivity, the app may take 50 seconds or more to load. Please wait</div>;
+  }
 
   return (
     <div className="home-container">
       <h1 className="home-title">Courses We Offer</h1>
-      
       <div className="course-list">
-        {/* Check if there are courses to display */}
         {listOfCourses.length > 0 ? (
           listOfCourses.map((course) => (
             <div
-              key={course._id} // Use course ID as a unique key
+              key={course._id}
               className="course-card"
-              onClick={() => navigate(`/course/${course._id}`)} // Navigate to course details on click
+              onClick={() => navigate(`/course/${course._id}`)}
             >
               <h3 className="course-name">{course.coursename}</h3>
               <p className="course-description">{course.description}</p>
@@ -52,11 +60,9 @@ export const Home = () => {
             </div>
           ))
         ) : (
-          <p className="no-courses">No courses available at the moment.</p> // Show message if no courses exist
+          <p className="no-courses">No courses available at the moment.</p>
         )}
       </div>
-      
-      {/* Footer component */}
       <Footer />
     </div>
   );
