@@ -112,5 +112,8 @@
   color: #333;
   font-weight: 600;
   margin-top: 20px;
+  display:flex;
+  align-content:center;
+  
 }
 
