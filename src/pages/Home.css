@@ -46,7 +46,7 @@
   background-size: cover;
   color: white;
   text-align: left; /* Align text to the left inside the card */
-  z-index: -1;
+  
 }
 
 .course-card:hover {
