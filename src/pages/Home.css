@@ -1,71 +1,116 @@
 /* General page styles */
 .home-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Courier New', Courier, monospace Arial, sans-serif;
-    font-weight: 800;
-    background: linear-gradient(to bottom right, #f0f4ff, #d9e2ff);
-    background: url('https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ymx1ZXxlbnwwfHwwfHx8MA%3D%3D');
-    
-  }
-  
-  .home-title {
-    font-size: 3rem;
-    text-align: center;
-    color: rgb(0, 0, 104);
-    font-family: 'Courier New', Courier, monospace Arial, sans-serif;
-    margin-bottom: 30px;
-    font-weight: 900;
-  }
-  
-  /* Course list styling */
-  .course-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-  }
-  
-  /* Course card styles */
-  .course-card {
-    background: linear-gradient(135deg, #cb7411, #f4f1ef);
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .course-card:hover {
-    cursor: pointer;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-  /* Course name */
-  .course-name {
-    font-size: 1.7rem;
-    color: red;
-    font-weight: 1300;
-   
-    margin-bottom: 10px;
-  }
-  
-  /* Course description */
-  .course-description {
-    font-size: 1.1rem;
-    color: black;
-    margin-bottom: 15px;
-    line-height: 1.5;
-    font-weight: 700;
-    text-align: justify;
-  }
-  
-  /* Course author */
-  .course-author {
-    font-size: 0.9rem;
-    color: #333;
-    font-weight: 600;
-    margin-top: 15px;
-  }
-  
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
+  font-weight: 800;
+  background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D');
+  background-size: 100% 8%; /* Control the height of the image to 30% */
+  background-repeat: repeat-y; /* Repeat vertically */
+ 
+  color: white;
+  padding-top: 50px; /* Adjusting top padding for better spacing */
+  text-align: center;
+}
+
+/* Home title */
+.home-title {
+  font-size: 3rem;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
+  margin-bottom: 30px;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+}
+
+/* Course list styling */
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 50px; /* Space between title and cards */
+}
+
+/* Course card styles */
+.course-card {
+  background: transparent;
+  border: 1px solid #d1d1d1;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  font-weight: bolder;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  color: white;
+  text-align: left; /* Align text to the left inside the card */
+}
+
+.course-card:hover {
+  cursor: pointer;
+  transform: translateY(-8px); /* Slightly larger hover effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Course name */
+.course-name {
+  font-size: 1.8rem;
+  color: rgb(0, 0, 157);
+  font-weight: bolder;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(16, 21, 110, 0.4);
+}
+
+/* Course description */
+.course-description {
+  font-size: 1.1rem;
+  color: wheat;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6); /* Light shadow for contrast */
+  margin-bottom: 20px;
+  line-height: 1.4;
+  font-weight: 200;
+  text-align: justify;
+}
+
+/* Course author */
+.course-author {
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* Spinner styling */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Light border */
+  border-top: 4px solid #3498db; /* Blue color for the spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation for the spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading message */
+.loading-message {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 20px;
+}
+

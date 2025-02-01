@@ -4,6 +4,13 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Footer from "../components/Footer";
 
+// Simple loading spinner component
+const LoadingSpinner = () => (
+  <div className="spinner-container">
+    <div className="spinner"></div>
+  </div>
+);
+
 export const Home = () => {
   // State for loading status and fetched courses
   const [loading, setLoading] = useState(true);
@@ -36,9 +43,14 @@ export const Home = () => {
       });
   }, [apiUrl]);
 
-  // Show loading message until data is fetched
+  // Show loading spinner until data is fetched
   if (loading) {
-    return <div className="loading-message">Loading courses...  Due to server inactivity, the app may take 50 seconds or more to load. Please wait</div>;
+    return (
+      <div className="loading-message">
+        <LoadingSpinner />
+        Loading courses... Due to server inactivity, the app may take 50 seconds or more to load. Please wait.
+      </div>
+    );
   }
 
   return (
