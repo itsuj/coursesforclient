@@ -58,7 +58,7 @@
 /* Course name */
 .course-name {
   font-size: 1.8rem;
-  color: rgb(0, 0, 157);
+  color: white;
   font-weight: bolder;
   margin-bottom: 15px;
   text-shadow: 2px 2px 5px rgba(16, 21, 110, 0.4);
