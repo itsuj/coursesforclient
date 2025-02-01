@@ -1,48 +1,85 @@
 .container {
-    width: 50%;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background: #f9f9f9;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background: #f9f9f9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Responsive for Tablets */
+@media (max-width: 1024px) {
+  .container {
+    width: 70%;
   }
-  
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+.sectionTitle {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
   .sectionTitle {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 20px;
   }
-  
-  .formGroup {
-    margin-bottom: 15px;
-  }
-  
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Make inputs larger for mobile users */
+@media (max-width: 768px) {
   input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
+    padding: 8px;
   }
-  
-  textarea {
-    height: 100px;
-    resize: none;
-  }
-  
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.btn {
+  background: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+/* Adjust button padding for smaller screens */
+@media (max-width: 768px) {
   .btn {
-    background: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    padding: 8px 12px;
   }
-  
-  .btn:hover {
-    background: #0056b3;
-  }
-  
-  
+}
+
+.btn:hover {
+  background: #0056b3;
+}
