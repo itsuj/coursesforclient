@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
-import Footer from "../Footer";
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,7 +31,7 @@ function Navbar() {
       <ul className={menuOpen ? "nav-links open" : "nav-links"}>
         <li><a href="/">Home</a></li>
         <li><a href="/">Courses</a></li>
-        <li><Footer />About</li>
+        <li><a href="/">About</a></li>
         <li><Link to="/contact">Contact Us</Link></li>
         {isLoggedIn ? (
           <li><button onClick={handleLogout}>Logout</button></li> // If logged in, show Logout button
