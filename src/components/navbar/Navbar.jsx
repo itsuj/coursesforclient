@@ -8,14 +8,15 @@ function Navbar() {
 
   // Check login status when component mounts
   useEffect(() => {
-    const token = localStorage.getItem("accessToken"); // Check if the token exists in localStorage
-    setIsLoggedIn(token ? true : false);
+    const token = localStorage.getItem("accessToken");
+    setIsLoggedIn(!!token);
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("accessToken"); // Remove the token
-    setIsLoggedIn(false); // Update the state
-    window.location.href = "/"; // Redirect to home page or wherever you want
+    localStorage.removeItem("accessToken");
+    setIsLoggedIn(false);
+    setMenuOpen(false); // Close menu on logout
+    window.location.href = "/"; // Redirect to home page
   };
 
   return (
@@ -29,14 +30,14 @@ function Navbar() {
 
       {/* Navigation Links */}
       <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Courses</a></li>
-        <li><a href="/">About</a></li>
-        <li><Link to="/contact">Contact Us</Link></li>
+        <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
+        <li><a href="/" onClick={() => setMenuOpen(false)}>Courses</a></li>
+        <li><a href="/" onClick={() => setMenuOpen(false)}>About</a></li>
+        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
         {isLoggedIn ? (
-          <li><button onClick={handleLogout}>Logout</button></li> // If logged in, show Logout button
+          <li><button onClick={handleLogout}>Logout</button></li>
         ) : (
-          <li><Link to="/login">Login</Link></li> // If not logged in, show Login link
+          <li><Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link></li>
         )}
       </ul>
     </nav>
