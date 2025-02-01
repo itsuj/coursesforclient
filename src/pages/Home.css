@@ -5,16 +5,18 @@
     padding: 20px;
     font-family: 'Courier New', Courier, monospace Arial, sans-serif;
     font-weight: 800;
+    background: linear-gradient(to bottom right, #f0f4ff, #d9e2ff);
+    background: url('https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ymx1ZXxlbnwwfHwwfHx8MA%3D%3D');
     
   }
   
   .home-title {
     font-size: 3rem;
     text-align: center;
-    color: #683636;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(0, 0, 104);
+    font-family: 'Courier New', Courier, monospace Arial, sans-serif;
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: 900;
   }
   
   /* Course list styling */

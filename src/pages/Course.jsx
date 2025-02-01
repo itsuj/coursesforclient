@@ -63,6 +63,7 @@ const Course = () => {
           {/* Display course description */}
           <h3>Description:</h3>
           <p>{course.description}</p>
+          
         </div>
       </div>
     </div>
