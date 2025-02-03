@@ -39,7 +39,7 @@ const Course = () => {
 
   // Navigate back to the courses list
   const goBack = () => {
-    navigate("/"); 
+    navigate("/contact"); 
   };
 
   // Show a loading message while fetching course details
@@ -51,7 +51,7 @@ const Course = () => {
     <div className="course-page">
       <div className="course-container">
         {/* Button to go back to the courses list */}
-        <button className="back-button" onClick={goBack}>Go Back</button>
+        <button className="back-button" onClick={goBack}>Contact Us</button>
 
         <div className="course-header">
           {/* Display course name and author */}
