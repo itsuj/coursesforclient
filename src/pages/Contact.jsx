@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section id='contact' className="container">
       {/* Section title */}
-      <h1 className='sectionTitle'>Contact</h1>
+      <h1 className='sectionTitle'>Contact Us</h1>
       
       {/* Form submission to Formspree endpoint */}
       <form action="https://formspree.io/f/mdkkerab" method='post'>
